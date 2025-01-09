@@ -3,6 +3,9 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:more_clock/pages/main_clock/main_clock_binding.dart';
 import 'package:more_clock/pages/main_clock/main_clock_view.dart';
+import 'package:more_clock/pages/setting_clock/setting_clock_binding.dart';
+import 'package:more_clock/pages/setting_clock/setting_clock_view.dart';
+import 'package:more_clock/tools/date_picker.dart';
 
 Color primaryColor = const Color(0xff16cbde);
 Color bgColor = const Color(0xfff8f8f8);
@@ -32,7 +35,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       getPages: News,
-      initialRoute: '/mainClock',
+      initialRoute: '/main',
       theme: ThemeData(
         useMaterial3: true,
         primaryColor: primaryColor,
@@ -84,5 +87,7 @@ class MyApp extends StatelessWidget {
   }
 }
 List<GetPage<dynamic>> News = [
-  GetPage(name: '/mainClock', page: () => MainClockPage(), binding: MainClockBinding())
+  GetPage(name: '/main', page: () => const SettingClockView(), binding: SettingClockBinding()),
+  GetPage(name: '/mainClock', page: () => MainClockPage(), binding: MainClockBinding()),
+  GetPage(name: '/pick', page: () => const DatePicker()),
 ];

@@ -11,8 +11,8 @@ class SettingClockView extends GetView<PageLogic> {
     return Scaffold(
       body: Center(
         child: Obx(
-          () => controller.toy.value
-              ? const CircularProgressIndicator(color: Colors.blue)
+          () => controller.hagenes.value
+              ? const CircularProgressIndicator(color: Colors.orangeAccent)
               : buildError(),
         ),
       ),
@@ -26,7 +26,7 @@ class SettingClockView extends GetView<PageLogic> {
         children: [
           IconButton(
             onPressed: () {
-              controller.benxdqo();
+              controller.aftkruih();
             },
             icon: const Icon(
               Icons.restart_alt,
